@@ -8,8 +8,8 @@ describe("Button", () => {
 
   it("should render text", () => {
     const text = "foobar";
-    renderUI();
-    expect(screen.getByText(text)).toEqual(true);
+    renderUI({ text: text });
+    expect(screen.getByText(text)).toBeInTheDocument();
   });
 });
 

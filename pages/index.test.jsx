@@ -1,18 +1,13 @@
-/**
- * @jest-environment jsdom
- */
-
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import Home from "../pages/index";
+import Home from "./index";
 
 describe("Home", () => {
   it("should render", () => {
-    render(<Home />);
+    renderUI();
   });
 
   it("renders a heading", () => {
-    render(<Home />);
+    renderUI();
 
     const heading = screen.getByRole("heading", {
       name: /welcome to next\.js!/i,
@@ -21,3 +16,5 @@ describe("Home", () => {
     expect(heading).toBeInTheDocument();
   });
 });
+
+const renderUI = () => render(<Home />)
